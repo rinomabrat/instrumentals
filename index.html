@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rinomabrat Beats Store</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset & base */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #121212;
+      color: #eee;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+    }
+    h1 {
+      font-weight: 700;
+      font-size: 2.8rem;
+      color: #00d8c9;
+      margin-bottom: 0.5rem;
+    }
+    p.subtitle {
+      color: #aaa;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+    .beats-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 2rem;
+      width: 100%;
+      max-width: 900px;
+    }
+    .beat-card {
+      background: #1e1e1e;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #00d8c95e;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .beat-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 25px #00d8c9aa;
+    }
+    .beat-title {
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+      color: #00d8c9;
+    }
+    audio {
+      width: 100%;
+      outline: none;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      background: #111;
+    }
+    .price {
+      font-weight: 600;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: #ffc107;
+    }
+    .buy-btn {
+      background: #00d8c9;
+      color: #121212;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 100%;
+      max-width: 180px;
+    }
+    .buy-btn:hover {
+      background: #00b39d;
+    }
+    footer {
+      margin-top: auto;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+      color: #444;
+      text-align: center;
+      width: 100%;
+      max-width: 900px;
+    }
+    /* Responsive tweaks */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .beat-title {
+        font-size: 1.3rem;
+      }
+      .buy-btn {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Rinomabrat Beats Store</h1>
+    <p class="subtitle">Exclusive beats & instrumentals for sale — listen & buy with PayPal</p>
+  </header>
+
+  <main class="beats-container">
+
+    <!-- Beat #1 -->
+    <section class="beat-card">
+      <h2 class="beat-title">Nightflow</h2>
+      <audio controls preload="none">
+        <source src="beats/nightflow.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+      <p class="price">MP3 License — €19.99</p>
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+        <input type="hidden" name="cmd" value="_xclick" />
+        <input type="hidden" name="business" value="your-paypal@email.com" />
+        <input type="hidden" name="item_name" value="Nightflow MP3 License" />
+        <input type="hidden" name="amount" value="19.99" />
+        <input type="hidden" name="currency_code" value="EUR" />
+        <input type="hidden" name="return" value="https://rinomabrat.github.io/instrumentals/thanks.html" />
+        <input type="hidden" name="cancel_return" value="https://rinomabrat.github.io/instrumentals/cancel.html" />
+        <input class="buy-btn" type="submit" value="Buy with PayPal" />
+      </form>
+    </section>
+
+    <!-- Beat #2 -->
+    <section class="beat-card">
+      <h2 class="beat-title">Skyline Dreams</h2>
+      <audio controls preload="none">
+        <source src="beats/skyline.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+      <p class="price">MP3 License — €24.99</p>
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+        <input type="hidden" name="cmd" value="_xclick" />
+        <input type="hidden" name="business" value="your-paypal@email.com" />
+        <input type="hidden" name="item_name" value="Skyline Dreams MP3 License" />
+        <input type="hidden" name="amount" value="24.99" />
+        <input type="hidden" name="currency_code" value="EUR" />
+        <input type="hidden" name="return" value="https://rinomabrat.github.io/instrumentals/thanks.html" />
+        <input type="hidden" name="cancel_return" value="https://rinomabrat.github.io/instrumentals/cancel.html" />
+        <input class="buy-btn" type="submit" value="Buy with PayPal" />
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    &copy; 2025 Rinomabrat Beats. All rights reserved.
+  </footer>
+
+</body>
+</html>
